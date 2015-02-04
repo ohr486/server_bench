@@ -27,6 +27,7 @@ defmodule ExServer.Mixfile do
   defp deps do
     [
       {:cowboy, github: "extend/cowboy"},
+      {:cowboy, github: "extend/cowlib"},
       {:emysql, github: "Eonblast/Emysql"},
     ]
   end
