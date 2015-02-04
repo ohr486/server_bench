@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  mount MyBench::API => '/'
+  resources :users
+  resources :groups
+  get '/ping' => "bench#ping"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

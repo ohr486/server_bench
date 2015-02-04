@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+group = Group.create(title: 'sample')
+User.create([{group_id: group.id, name: "user1", age: 10},
+             {group_id: group.id, name: "user2", age: 20}])
