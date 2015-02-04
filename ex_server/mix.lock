@@ -1,4 +1,4 @@
 %{"cowboy": {:git, "git://github.com/extend/cowboy.git", "89c47d3d6edc8aafb4c9c4a5a86fb0239dee8f3a", []},
-  "cowlib": {:git, "git://github.com/ninenines/cowlib.git", "d544a494af4dbc810fc9c15eaf5cc050cced1501", [ref: "1.0.0"]},
+  "cowlib": {:git, "git://github.com/extend/cowlib.git", "404aefb052d6671c08017347273debf67123bfa9", []},
   "emysql": {:git, "git://github.com/Eonblast/Emysql.git", "c7e2103f8b737667f0128802e8de2f0d5ed2fa5c", []},
   "ranch": {:git, "git://github.com/ninenines/ranch.git", "adf1822defc2b7cfdc7aca112adabfa1d614043c", [ref: "1.0.0"]}}
