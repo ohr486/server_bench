@@ -5,14 +5,21 @@ defmodule ExServer.Mixfile do
     [app: :ex_server,
      version: "0.0.1",
      elixir: "~> 1.0",
-     deps: deps]
+     deps: deps,
+     erl_opts: erl_opts,
+    ]
   end
 
   # Configuration for the OTP application
   #
   # Type `mix help compile.app` for more information
   def application do
-    [applications: [:logger]]
+    [ mod: {ExServer, []},
+      applications: [:kernel, :stdlib, :emysql,
+                     :cowlib, :cowboy,
+                     :compiler, :syntax_tools, :goldrush, :lager, :logger],
+      registered: [:emysql_conn_mgr, :emysql_sup],
+    ]
   end
 
   # Dependencies can be Hex packages:
@@ -27,8 +34,14 @@ defmodule ExServer.Mixfile do
   defp deps do
     [
       {:cowboy, github: "extend/cowboy"},
-      {:cowlib, github: "extend/cowlib"},
+      {:jsonx,  github: "iskra/jsonx"},
       {:emysql, github: "Eonblast/Emysql"},
+      {:lager,  github: "basho/lager"},
     ]
   end
+
+  defp erl_opts do
+    [{:parse_transform, :lager_transform}]
+  end
+
 end
