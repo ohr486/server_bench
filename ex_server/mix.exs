@@ -6,7 +6,7 @@ defmodule ExServer.Mixfile do
      version: "0.0.1",
      elixir: "~> 1.0",
      deps: deps,
-     erl_opts: erl_opts,
+     #erl_opts: erl_opts,
     ]
   end
 
@@ -15,9 +15,11 @@ defmodule ExServer.Mixfile do
   # Type `mix help compile.app` for more information
   def application do
     [ mod: {ExServer, []},
-      applications: [:kernel, :stdlib, :emysql,
+      applications: [:kernel, :stdlib,
+                     :emysql,
                      :cowlib, :cowboy,
-                     :compiler, :syntax_tools, :goldrush, :lager, :logger],
+                     #:compiler, :syntax_tools, :goldrush, :lager,
+                     :logger],
       registered: [:emysql_conn_mgr, :emysql_sup],
     ]
   end
@@ -40,8 +42,8 @@ defmodule ExServer.Mixfile do
     ]
   end
 
-  defp erl_opts do
-    [{:parse_transform, :lager_transform}]
-  end
+  #defp erl_opts do
+  #  [{:parse_transform, :lager_transform}]
+  #end
 
 end
