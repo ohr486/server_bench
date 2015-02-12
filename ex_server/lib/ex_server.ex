@@ -20,11 +20,11 @@ defmodule ExServer do
   defp cowboy_routes do
     [
       {:_, [
-             {"/ping",            ExServer.Handler.Ping,   []},
-             {"/users",           ExServer.Handler.Users,  []},
-             {"/user/:user_id",   ExServer.Handler.User,   []},
-             {"/groups",          ExServer.Handler.Groups, []},
-             {"/group/:group_id", ExServer.Handler.Group,  []},
+             {"/ping",                ExServer.Handler.Ping,   []},
+             {"/api/users",           ExServer.Handler.Users,  []},
+             {"/api/user/:user_id",   ExServer.Handler.User,   []},
+             {"/api/groups",          ExServer.Handler.Groups, []},
+             {"/api/group/:group_id", ExServer.Handler.Group,  []},
            ]
       }
     ]
